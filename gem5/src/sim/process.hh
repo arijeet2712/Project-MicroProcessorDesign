@@ -170,7 +170,8 @@ class Process : public SimObject
                        ThreadContext *new_tc, bool alloc_page);
 
     virtual void clone(ThreadContext *old_tc, ThreadContext *new_tc,
-                       Process *new_p, RegVal flags);
+                       Process *new_p, bool share_vm, bool share_files,
+                       bool is_thread, bool is_vfork);
 
     // thread contexts associated with this process
     std::vector<ContextID> contextIds;

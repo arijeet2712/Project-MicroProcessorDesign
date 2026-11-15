@@ -1,0 +1,50 @@
+      0: system.cpu00: Constructing CPU with id 0, socket id 0
+      0: system.cpu01: Constructing CPU with id 1, socket id 0
+      0: system.cpu02: Constructing CPU with id 2, socket id 0
+      0: system.cpu03: Constructing CPU with id 3, socket id 0
+      0: system.cpu04: Constructing CPU with id 4, socket id 0
+      0: system.cpu05: Constructing CPU with id 5, socket id 0
+      0: system.cpu06: Constructing CPU with id 6, socket id 0
+      0: system.cpu07: Constructing CPU with id 7, socket id 0
+      0: system.cpu08: Constructing CPU with id 8, socket id 0
+      0: system.cpu09: Constructing CPU with id 9, socket id 0
+      0: system.cpu10: Constructing CPU with id 10, socket id 0
+      0: system.cpu11: Constructing CPU with id 11, socket id 0
+      0: system.cpu12: Constructing CPU with id 12, socket id 0
+      0: system.cpu13: Constructing CPU with id 13, socket id 0
+      0: system.cpu14: Constructing CPU with id 14, socket id 0
+      0: system.cpu15: Constructing CPU with id 15, socket id 0
+      0: system.cpu00: activate contextId 0
+3458000: system.cpu00: T0 : syscall Calling brk(0)...
+3458000: system.cpu00: T0 : syscall Returned 5603328.
+3521200: system.cpu00: T0 : syscall Calling brk(5606128)...
+3521200: system.cpu00: T0 : syscall brk: break point changed to: 0X558AF0
+3521200: system.cpu00: T0 : syscall Returned 5606128.
+3866000: system.cpu00: T0 : syscall Calling set_tid_address(5603536)...
+3866000: system.cpu00: T0 : syscall Returned 100.
+3951600: system.cpu00: T0 : syscall Calling set_robust_list)...
+3951600: system.cpu00: T0 : syscall Returned 0.
+4136000: system.cpu00: T0 : syscall Calling rseq(5605152, 32, 0, 3559439360)...
+4136000: system.cpu00: T0 : syscall Returned 0.
+4714400: system.cpu00: T0 : syscall Calling prlimit64(0, 3, 0, 0x7ffffefda8)...
+4714400: system.cpu00: T0 : syscall Returned 0.
+5366400: system.cpu00: T0 : syscall Calling readlinkat(-100, 4580952, 549755743536, 4096)...
+5366400: system.cpu00: T0 : syscall Returned 56.
+6103200: system.cpu00: T0 : syscall Calling getrandom(5598616, 8, 1)...
+6103200: system.cpu00: T0 : syscall Returned 8.
+9216800: system.cpu00: T0 : syscall Calling brk(0)...
+9216800: system.cpu00: T0 : syscall Returned 5606128.
+9238400: system.cpu00: T0 : syscall Calling brk(5741296)...
+9238400: system.cpu00: T0 : syscall brk: break point changed to: 0X579AF0
+9238400: system.cpu00: T0 : syscall Returned 5741296.
+9496400: system.cpu00: T0 : syscall Calling brk(5742592)...
+9496400: system.cpu00: T0 : syscall brk: break point changed to: 0X57A000
+9496400: system.cpu00: T0 : syscall Returned 5742592.
+14305200: system.cpu00: T0 : syscall Calling mprotect)...
+14305200: system.cpu00: T0 : syscall Returned 0.
+27276947200: system.cpu00: T0 : syscall Calling fstatat64(1, 4554352, 0x7ffffef428)...
+27276947200: system.cpu00: T0 : syscall Returned -2.
+27281471200: system.cpu00: T0 : syscall Calling write(1, 5607328, 18)...
+27281471200: system.cpu00: T0 : syscall Returned 18.
+27283216800: system.cpu00: T0 : syscall Calling exit_group(0)...
+27283216800: system.cpu00: T0 : syscall Returned 0.

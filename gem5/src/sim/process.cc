@@ -167,21 +167,10 @@ Process::Process(const ProcessParams &params, EmulationPageTable *pTable,
 
 void
 Process::clone(ThreadContext *otc, ThreadContext *ntc,
-               Process *np, RegVal flags)
+               Process *np, bool share_vm, bool share_files, bool is_thread,
+               bool is_vfork)
 {
-#ifndef CLONE_VM
-#define CLONE_VM 0
-#endif
-#ifndef CLONE_FILES
-#define CLONE_FILES 0
-#endif
-#ifndef CLONE_THREAD
-#define CLONE_THREAD 0
-#endif
-#ifndef CLONE_VFORK
-#define CLONE_VFORK 0
-#endif
-    if (CLONE_VM & flags) {
+    if (share_vm) {
         /**
          * Share the process memory address space between the new process
          * and the old process. Changes in one will be visible in the other
@@ -209,7 +198,7 @@ Process::clone(ThreadContext *otc, ThreadContext *ntc,
         *np->memState = *memState;
     }
 
-    if (CLONE_FILES & flags) {
+    if (share_files) {
         /**
          * The parent and child file descriptors are shared because the
          * two FDArray pointers are pointing to the same FDArray. Opening
@@ -249,13 +238,13 @@ Process::clone(ThreadContext *otc, ThreadContext *ntc,
         }
     }
 
-    if (CLONE_THREAD & flags) {
+    if (is_thread) {
         np->_tgid = _tgid;
         delete np->exitGroup;
         np->exitGroup = exitGroup;
     }
 
-    if (CLONE_VFORK & flags) {
+    if (is_vfork) {
         np->vforkContexts.push_back(otc->contextId());
     }
 

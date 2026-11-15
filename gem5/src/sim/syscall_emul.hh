@@ -1946,7 +1946,9 @@ doClone(SyscallDesc *desc, ThreadContext *tc, RegVal flags, RegVal newStack,
 
     ctc->setUseForClone(true);
     cp->initState();
-    p->clone(tc, ctc, cp, flags);
+    p->clone(
+        tc, ctc, cp, flags & OS::TGT_CLONE_VM, flags & OS::TGT_CLONE_FILES,
+        flags & OS::TGT_CLONE_THREAD, flags & OS::TGT_CLONE_VFORK);
 
     if (flags & OS::TGT_CLONE_THREAD) {
         delete cp->sigchld;
